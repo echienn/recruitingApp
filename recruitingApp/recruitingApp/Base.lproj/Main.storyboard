@@ -240,6 +240,9 @@
                                         <state key="normal" title="Add Contact">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addContact:" destination="h4X-bj-g3J" eventType="touchUpInside" id="0Ws-h3-NOU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -272,6 +275,13 @@
                         <viewLayoutGuide key="safeArea" id="8pS-ve-une"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Contact" id="vpa-hO-X5g"/>
+                    <connections>
+                        <outlet property="contactCompany" destination="Rvi-tQ-z22" id="u5J-x8-K8P"/>
+                        <outlet property="contactEmail" destination="Zyj-Uc-npy" id="RyO-Kc-aBr"/>
+                        <outlet property="contactName" destination="9vT-9R-nnr" id="tXQ-VT-W2g"/>
+                        <outlet property="contactNotes" destination="6C4-u2-2hU" id="U4k-MS-DuU"/>
+                        <outlet property="contactPhoneNumber" destination="gal-jf-19Q" id="qrT-lC-ne7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioq-Vv-zk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
