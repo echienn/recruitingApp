@@ -4,6 +4,9 @@
 //
 //  Created by Emily Zhong on 11/19/17.
 //  Copyright © 2017 Shubham Gupta. All rights reserved.
+
+//sources: https://www.andrewcbancroft.com/2014/08/25/send-email-in-app-using-////mfmailcomposeviewcontroller-with-swift/
+
 //
 
 import UIKit
@@ -38,8 +41,8 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
         mailComposerVC.setToRecipients(["someone@somewhere.com"]) //change this to the email in the contact
-        mailComposerVC.setSubject("Sending you an in-app e-mail...")
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        //mailComposerVC.setSubject("Sending you an in-app e-mail...")
+        //mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
         
         return mailComposerVC
     }
