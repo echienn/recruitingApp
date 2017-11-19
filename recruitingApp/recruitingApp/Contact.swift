@@ -8,11 +8,11 @@
 
 import Foundation
 class Contact{
-    private let name: String?
-    private let company: String?
-    private let email: String?
-    private let phoneNumber: String?
-    private let notes: String?
+    let name: String?
+    let company: String?
+    let email: String?
+    let phoneNumber: String?
+    let notes: String?
     
     init(name: String, company: String, email:String, phoneNumber: String, notes: String) {
         self.name = name

@@ -48,6 +48,13 @@ class ContactInformationViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         } else {
             var newContact: Contact = Contact(name: nameField, company: companyField, email: emailField, phoneNumber: phoneNumberField, notes: notesField);
+            if companyList.contains(companyField) {
+                contactBook[companyField]!.append(newContact)
+            } else {
+                companyList.append(companyField)
+                contactBook[companyField] = []
+                contactBook[companyField]!.append(newContact)
+            }
         }
         //if let name = contactName
     }

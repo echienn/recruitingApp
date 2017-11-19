@@ -31,8 +31,23 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! UITableViewCell
+        var cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactsTableViewCell
+        if let recruiter = getRecruiterFromIndexPath(indexPath: indexPath) {
+            cell.contactName.text = recruiter.name
+            cell.contactCompany.text = recruiter.company
+            cell.contactPhoto.image = UIImage(named: "blankUser")
+        }
+        //var recruiter : Contact = getRecruiterFromIndexPath(indexPath: indexPath)!
+        
         return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int  {
+        return companyList.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return companyList[section]
     }
     
 
