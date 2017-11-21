@@ -47,20 +47,45 @@ class ContactInformationViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            var newContact: Contact = Contact(name: nameField, company: companyField, email: emailField, phoneNumber: phoneNumberField, notes: notesField);
+            print("ENTERED First ELSE CASE")
+            print(nameField)
+        
+            let newContact: Contact = Contact(name: nameField, company: companyField, email: emailField, phoneNumber: phoneNumberField, notes: notesField);
+            
+            print(companyList)
+            print(contactBook)
+            print(companyList.contains(companyField))
             if companyList.contains(companyField) {
+                print(companyField)
                 contactBook[companyField]!.append(newContact)
             } else {
+                print(emailField)
                 companyList.append(companyField)
                 contactBook[companyField] = []
                 contactBook[companyField]!.append(newContact)
+                
             }
+            print("AFTER ADDING CONTACT")
+            print(companyList)
+            print(contactBook)
         }
         //if let name = contactName
     }
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        
+        
+        //Looks for single or multiple taps.
+         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ContactInformationViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 

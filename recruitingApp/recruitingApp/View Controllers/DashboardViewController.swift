@@ -26,12 +26,19 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.contactsTableView.reloadData();
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return contactBook[companyList[section]]!.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactsTableViewCell
+        print("indexPathRow IN Dashboard: ", indexPath.row)
         if let recruiter = getRecruiterFromIndexPath(indexPath: indexPath) {
             cell.contactName.text = recruiter.name
             cell.contactCompany.text = recruiter.company

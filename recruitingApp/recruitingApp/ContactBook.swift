@@ -13,8 +13,13 @@ var contactBook: [String: [Contact]] = [:]
 
 
 func getRecruiterFromIndexPath(indexPath: IndexPath) -> Contact? {
+    print("indexPathSection: ", indexPath.section)
     let sectionName = companyList[indexPath.section]
     if let companyArray = contactBook[sectionName] {
+        print("indexPath: ", indexPath)
+        print("indexPathRow: ", indexPath.row)
+        print("Company: ", sectionName)
+        print(companyArray)
         return companyArray[indexPath.row]
     }
     print("No post at index \(indexPath.row)")
