@@ -15,7 +15,7 @@ import Foundation
 
 class DashboardViewController: UIViewController, MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
-
+    var selectedRecruiter: Contact?
     
     @IBOutlet weak var contactsTableView: UITableView!
     
@@ -57,6 +57,27 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
         return companyList[section]
     }
     
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        if let selectedCell = tableView.cellForRow(at: indexPath) as? ContactsTableViewCell {
+            if let recruiter = getRecruiterFromIndexPath(indexPath: indexPath) {
+                selectedRecruiter = recruiter;
+            }
+        }
+         performSegue(withIdentifier: "openContact", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "openContact" {
+                if let dest = segue.destination as? ContactDetailsViewController {
+                    dest.recruiter = selectedRecruiter
+                }
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
