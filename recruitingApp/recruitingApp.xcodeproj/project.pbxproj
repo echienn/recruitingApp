@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		51591E6B1FC2220F00A23557 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51591E6A1FC2220F00A23557 /* ContactsTableViewCell.swift */; };
 		51591E6D1FC22B3A00A23557 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51591E6C1FC22B3A00A23557 /* Contact.swift */; };
+		51591E6F1FC244F600A23557 /* ContactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51591E6E1FC244F600A23557 /* ContactBook.swift */; };
 		51C0B23B1FBD3CFD008B806B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C0B23A1FBD3CFD008B806B /* AppDelegate.swift */; };
 		51C0B23D1FBD3CFD008B806B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C0B23C1FBD3CFD008B806B /* ViewController.swift */; };
 		51C0B2401FBD3CFD008B806B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C0B23E1FBD3CFD008B806B /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		51591E6A1FC2220F00A23557 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		51591E6C1FC22B3A00A23557 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		51591E6E1FC244F600A23557 /* ContactBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBook.swift; sourceTree = "<group>"; };
 		51C0B2371FBD3CFD008B806B /* recruitingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recruitingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C0B23A1FBD3CFD008B806B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C0B23C1FBD3CFD008B806B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				51C0B2431FBD3CFD008B806B /* LaunchScreen.storyboard */,
 				51C0B2461FBD3CFD008B806B /* Info.plist */,
 				51591E6C1FC22B3A00A23557 /* Contact.swift */,
+				51591E6E1FC244F600A23557 /* ContactBook.swift */,
 			);
 			path = recruitingApp;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				51591E6B1FC2220F00A23557 /* ContactsTableViewCell.swift in Sources */,
 				51C0B23B1FBD3CFD008B806B /* AppDelegate.swift in Sources */,
 				EF1947651FC2061500B81E84 /* DashboardViewController.swift in Sources */,
+				51591E6F1FC244F600A23557 /* ContactBook.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +303,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8J55MU249;
 				INFOPLIST_FILE = recruitingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "IOS-Decal.recruitingApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS-Decal.recruitingApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,9 +318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U8J55MU249;
 				INFOPLIST_FILE = recruitingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "IOS-Decal.recruitingApp";
+				PRODUCT_BUNDLE_IDENTIFIER = "IOS-Decal.recruitingApplication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
