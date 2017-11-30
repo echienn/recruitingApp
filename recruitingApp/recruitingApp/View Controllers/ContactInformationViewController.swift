@@ -65,9 +65,17 @@ class ContactInformationViewController: UIViewController {
                 contactBook[companyField]!.append(newContact)
                 
             }
+            let alert = UIAlertController(title: "Contact Added!", message: nameField + " has been added to your contact book", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (action) in
+                self.performSegue(withIdentifier: "unwindToDashboard", sender: self)
+            }))
+        
+            self.present(alert, animated: true, completion: nil)
+
             print("AFTER ADDING CONTACT")
             print(companyList)
             print(contactBook)
+            
         }
         //if let name = contactName
     }

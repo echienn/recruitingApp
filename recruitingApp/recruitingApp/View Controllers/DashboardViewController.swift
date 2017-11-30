@@ -83,6 +83,7 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func unwindToDashboard(segue:UIStoryboardSegue) { }
     
     /*
     @IBAction func SendEmail(_ sender: UIButton) {

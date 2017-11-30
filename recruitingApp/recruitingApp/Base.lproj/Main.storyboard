@@ -371,11 +371,13 @@
                         <outlet property="contactName" destination="9vT-9R-nnr" id="tXQ-VT-W2g"/>
                         <outlet property="contactNotes" destination="6C4-u2-2hU" id="U4k-MS-DuU"/>
                         <outlet property="contactPhoneNumber" destination="gal-jf-19Q" id="qrT-lC-ne7"/>
+                        <segue destination="eil-wt-xBl" kind="unwind" identifier="unwindToDashboard" unwindAction="unwindToDashboardWithSegue:" id="mRn-B4-etE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioq-Vv-zk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eil-wt-xBl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1093.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1191" y="-54"/>
         </scene>
     </scenes>
     <resources>
