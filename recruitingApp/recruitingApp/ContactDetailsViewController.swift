@@ -12,9 +12,18 @@ class ContactDetailsViewController: UIViewController {
     
     var recruiter: Contact!
     
+    @IBOutlet var recruiter_name: UILabel!
+    @IBOutlet var recruiter_company: UILabel!
+    @IBOutlet var recruiter_email: UILabel!
+    @IBAction func sendEmail(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        recruiter_name.text = recruiter.name
+        recruiter_company.text = recruiter.company
+        recruiter_email.text = recruiter.email
+        
 
         // Do any additional setup after loading the view.
     }
