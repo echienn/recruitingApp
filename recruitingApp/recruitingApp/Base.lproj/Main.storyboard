@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="656.25" y="-785.91549295774644"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Tbn-eQ-biY">
             <objects>
-                <viewController id="QS5-91-gcL" sceneMemberID="viewController">
+                <viewController id="QS5-91-gcL" customClass="LoginViewController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFo-u8-pts">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -480,10 +480,10 @@
             </objects>
             <point key="canvasLocation" x="-788" y="396"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="UWh-1I-e83">
             <objects>
-                <viewController id="RA8-LR-Q8O" sceneMemberID="viewController">
+                <viewController id="RA8-LR-Q8O" customClass="CreateAccountViewController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZl-qj-kYm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
