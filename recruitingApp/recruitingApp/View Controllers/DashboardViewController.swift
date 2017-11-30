@@ -84,6 +84,7 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     @IBAction func SendEmail(_ sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
@@ -113,7 +114,7 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
+  */
     /*
     // MARK: - Navigation
 
