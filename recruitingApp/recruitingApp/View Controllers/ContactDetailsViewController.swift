@@ -20,6 +20,7 @@ class ContactDetailsViewController: UIViewController,MFMailComposeViewController
     @IBOutlet var recruiter_company: UILabel!
     @IBOutlet var recruiter_email: UILabel!
     @IBOutlet weak var currentStatus: UILabel!
+    @IBOutlet weak var currentStatusImage: UIImageView!
     
     @IBAction func sendEmail(_ sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
@@ -56,6 +57,13 @@ class ContactDetailsViewController: UIViewController,MFMailComposeViewController
         recruiter_company.text = recruiter.company
         recruiter_email.text = recruiter.email
         currentStatus.text = recruiter.status
+        if (recruiter.status == "offer" || recruiter.status == "accepted") {
+            currentStatusImage.image = UIImage(named: "accepted.png")
+        } else if (recruiter.status == "rejected") {
+            currentStatusImage.image = UIImage(named: "rejected.png")
+        } else {
+            currentStatusImage.image = UIImage(named: "pending.png")
+        }
         
 
         // Do any additional setup after loading the view.
