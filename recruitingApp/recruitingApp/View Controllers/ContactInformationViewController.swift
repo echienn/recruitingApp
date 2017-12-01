@@ -50,7 +50,7 @@ class ContactInformationViewController: UIViewController {
             print("ENTERED First ELSE CASE")
             print(nameField)
         
-            let newContact: Contact = Contact(name: nameField, company: companyField, email: emailField, phoneNumber: phoneNumberField, notes: notesField);
+            let newContact: Contact = Contact(name: nameField, company: companyField, email: emailField, phoneNumber: phoneNumberField, notes: notesField, status: "Haven't Applied");
             
             print(companyList)
             print(contactBook)

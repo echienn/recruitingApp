@@ -43,6 +43,7 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
             cell.contactName.text = recruiter.name
             cell.contactCompany.text = recruiter.company
             cell.contactPhoto.image = UIImage(named: "blankUser")
+            cell.contactStatus.text = recruiter.status
         }
         //var recruiter : Contact = getRecruiterFromIndexPath(indexPath: indexPath)!
         

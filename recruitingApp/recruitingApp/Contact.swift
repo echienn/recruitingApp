@@ -13,13 +13,15 @@ class Contact{
     let email: String?
     let phoneNumber: String?
     let notes: String?
+    let status: String?
     
-    init(name: String, company: String, email:String, phoneNumber: String, notes: String) {
+    init(name: String, company: String, email:String, phoneNumber: String, notes: String, status:String) {
         self.name = name
         self.company = company
         self.email = email
         self.phoneNumber = phoneNumber
         self.notes = notes
+        self.status = status
     }
     
 }

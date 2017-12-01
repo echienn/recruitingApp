@@ -125,6 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="APW-I0-Lpp"/>
                     </view>
                     <connections>
+                        <outlet property="currentStatus" destination="8HW-Ut-Ceo" id="7Pj-8g-pRd"/>
                         <outlet property="recruiter_company" destination="IJp-Dx-DN6" id="rJg-Ze-8xO"/>
                         <outlet property="recruiter_email" destination="hPU-yx-jnB" id="ES3-dq-14E"/>
                         <outlet property="recruiter_name" destination="rYn-LB-uCh" id="AQF-kr-gvL"/>
@@ -163,6 +164,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhx-eP-13b">
                                         <rect key="frame" x="0.0" y="235.5" width="280" height="30.5"/>
                                         <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUH-j2-nrA">
@@ -263,13 +265,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-el-DYd">
+                                                    <rect key="frame" x="105" y="68" width="206" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="206" id="h69-jQ-Zni"/>
+                                                        <constraint firstAttribute="height" constant="21" id="mZg-2f-1TB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="moc-nJ-Its" firstAttribute="top" secondItem="I53-ov-7mP" secondAttribute="top" constant="16" id="033-XF-54K"/>
                                                 <constraint firstItem="DQn-9G-oIs" firstAttribute="top" secondItem="I53-ov-7mP" secondAttribute="top" constant="45" id="2cL-Gn-qSj"/>
+                                                <constraint firstItem="Pgc-el-DYd" firstAttribute="top" secondItem="I53-ov-7mP" secondAttribute="top" constant="68" id="4R5-Aj-R9p"/>
                                                 <constraint firstAttribute="bottom" secondItem="mVg-dV-E4f" secondAttribute="bottom" constant="10.5" id="4ur-pf-AU9"/>
                                                 <constraint firstItem="mVg-dV-E4f" firstAttribute="leading" secondItem="I53-ov-7mP" secondAttribute="leading" constant="15" id="6dr-4D-dwF"/>
                                                 <constraint firstItem="DQn-9G-oIs" firstAttribute="leading" secondItem="I53-ov-7mP" secondAttribute="leading" constant="105" id="E28-J1-OX6"/>
+                                                <constraint firstItem="Pgc-el-DYd" firstAttribute="leading" secondItem="I53-ov-7mP" secondAttribute="leading" constant="105" id="Og7-Nn-RMM"/>
                                                 <constraint firstAttribute="bottom" secondItem="DQn-9G-oIs" secondAttribute="bottom" constant="37.5" id="aEZ-QB-XzB"/>
                                                 <constraint firstAttribute="bottom" secondItem="moc-nJ-Its" secondAttribute="bottom" constant="62.5" id="cCT-7Q-vN9"/>
                                                 <constraint firstItem="mVg-dV-E4f" firstAttribute="centerY" secondItem="I53-ov-7mP" secondAttribute="centerY" id="hcC-30-513"/>
@@ -280,6 +294,7 @@
                                             <outlet property="contactCompany" destination="DQn-9G-oIs" id="Yz8-dp-ECz"/>
                                             <outlet property="contactName" destination="moc-nJ-Its" id="QTA-Zq-K5f"/>
                                             <outlet property="contactPhoto" destination="mVg-dV-E4f" id="DOD-Gg-x4S"/>
+                                            <outlet property="contactStatus" destination="Pgc-el-DYd" id="Ysm-g7-bZl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

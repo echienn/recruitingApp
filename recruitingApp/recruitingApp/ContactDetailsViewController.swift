@@ -19,6 +19,8 @@ class ContactDetailsViewController: UIViewController,MFMailComposeViewController
     @IBOutlet var recruiter_name: UILabel!
     @IBOutlet var recruiter_company: UILabel!
     @IBOutlet var recruiter_email: UILabel!
+    @IBOutlet weak var currentStatus: UILabel!
+    
     @IBAction func sendEmail(_ sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
@@ -53,6 +55,7 @@ class ContactDetailsViewController: UIViewController,MFMailComposeViewController
         recruiter_name.text = recruiter.name
         recruiter_company.text = recruiter.company
         recruiter_email.text = recruiter.email
+        currentStatus.text = recruiter.status
         
 
         // Do any additional setup after loading the view.
