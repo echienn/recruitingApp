@@ -15,6 +15,8 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var contactCompany: UILabel!
     @IBOutlet weak var contactStatus: UILabel!
     
+    @IBOutlet weak var statusIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

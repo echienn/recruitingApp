@@ -38,16 +38,30 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = contactsTableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! ContactsTableViewCell
-        print("indexPathRow IN Dashboard: ", indexPath.row)
         if let recruiter = getRecruiterFromIndexPath(indexPath: indexPath) {
             cell.contactName.text = recruiter.name
             cell.contactCompany.text = recruiter.company
             cell.contactPhoto.image = UIImage(named: "blankUser")
             cell.contactStatus.text = recruiter.status
+            print(recruiter.status)
+            let imgName:String  = setStatusIcon(status: recruiter.status!)
+            cell.statusIcon.image = UIImage(named: imgName)
+            //UIImage(named: "accepted.png")
         }
         //var recruiter : Contact = getRecruiterFromIndexPath(indexPath: indexPath)!
         
         return cell
+    }
+    func setStatusIcon(status: String) -> String {
+        print("HRLLLLLLO")
+        if (status == "offer" || status == "accepted") {
+             return "accepted.png"
+        } else if (status == "rejected") {
+            return "rejected.png"
+        } else {
+            print("HRLLLLLLO2222")
+            return "pending.png"
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int  {
