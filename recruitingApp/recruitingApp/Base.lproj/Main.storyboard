@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="570" y="-788"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="Tbn-eQ-biY">
             <objects>
-                <viewController id="QS5-91-gcL" customClass="LoginViewController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QS5-91-gcL" customClass="SignInViewController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFo-u8-pts">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +199,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="diO-xb-ErD" kind="show" id="NYe-gj-MM0"/>
+                                            <action selector="logInPressed:" destination="QS5-91-gcL" eventType="touchUpInside" id="lFR-xv-Ri5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkS-TQ-DUi">
@@ -207,7 +207,8 @@
                                         <color key="tintColor" red="0.4823529412" green="0.60784313729999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Don't have an account yet?"/>
                                         <connections>
-                                            <segue destination="RA8-LR-Q8O" kind="show" id="Dbm-Q5-8B7"/>
+                                            <action selector="signUpPressed:" destination="QS5-91-gcL" eventType="touchUpInside" id="ch6-vw-55l"/>
+                                            <segue destination="RA8-LR-Q8O" kind="show" identifier="segueLogInToCreateAccount" id="Dbm-Q5-8B7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -240,6 +241,11 @@
                         <viewLayoutGuide key="safeArea" id="tcz-rU-0eX"/>
                     </view>
                     <navigationItem key="navigationItem" id="Do4-ID-7tl"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="qxW-Oz-c4C" id="guK-RS-MCs"/>
+                        <outlet property="passwordTextField" destination="jhx-eP-13b" id="hum-Nl-agj"/>
+                        <segue destination="diO-xb-ErD" kind="show" identifier="segueSignInToMainPage" id="obT-SY-IeJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrj-dJ-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -544,10 +550,10 @@
             </objects>
             <point key="canvasLocation" x="-788" y="396"/>
         </scene>
-        <!--Create Account View Controller-->
+        <!--Create Account Controller-->
         <scene sceneID="UWh-1I-e83">
             <objects>
-                <viewController id="RA8-LR-Q8O" customClass="CreateAccountViewController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RA8-LR-Q8O" customClass="CreateAccountController" customModule="recruitingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZl-qj-kYm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,7 +610,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="QS5-91-gcL" kind="show" id="9EC-Gs-VJ2"/>
+                                            <action selector="signUpPressed:" destination="RA8-LR-Q8O" eventType="touchUpInside" id="ZOZ-HP-IJY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -627,6 +633,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lGh-1Z-8YW"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="k4b-no-9hx" id="kCV-nP-Nre"/>
+                        <outlet property="passwordTextField" destination="jR4-DQ-5qF" id="zrS-sh-FEn"/>
+                        <outlet property="passwordVerificationTextField" destination="gFC-af-aEq" id="8Wl-YQ-ZBd"/>
+                        <segue destination="diO-xb-ErD" kind="show" identifier="segueSignInToEntered" id="ule-wA-8Pp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yf7-jq-4hI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -641,4 +653,7 @@
         <image name="profile-background" width="5262" height="2333"/>
         <image name="rejected" width="2626" height="2626"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="obT-SY-IeJ"/>
+    </inferredMetricsTieBreakers>
 </document>

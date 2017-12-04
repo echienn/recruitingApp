@@ -8,10 +8,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
-class CreateAccountController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var nameTextField: UITextField!
-    
+class CreateAccountController: UIViewController, UITextFieldDelegate {    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,7 +18,6 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordVerificationTextField: UITextField!
     
     var userEmail = ""
-    var userName = ""
     var userPassword = ""
     var userVerifiedPassWord = ""
     
@@ -28,16 +26,15 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpPressed(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        guard let name = nameTextField.text else { return }
         guard let verifiedPassword = passwordVerificationTextField.text else { return }
-        if email == "" || password == "" || name == "" || verifiedPassword == "" {
+        if email == "" || password == "" || verifiedPassword == "" {
             let alertController = UIAlertController(title: "Form Error.", message: "Please fill in form completely.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             
         } else {
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     // TO DO:
                     // The user account has been successfully created. Now, update the user's name in
@@ -45,7 +42,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     // already exists somewhere, just do some simple debugging to find the identifier.
                     // Also, notify the user that the account has been successfully created before
                     // performing the segue.
-                    //self.performSegue(withIdentifier: segueSignUpToMainPage, sender: self)
+                    self.performSegue(withIdentifier: "segueSignInToEntered", sender: self)
                 } else if password != verifiedPassword {
                     let alertController = UIAlertController(title: "Verification Error.", message: "The two passwords do not match.", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -58,19 +55,21 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
                 }
-            }
+            })
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nameTextField.delegate = self
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.passwordVerificationTextField.delegate = self
         
         // Do any additional setup after loading the view.
+        if(FirebaseApp.app() == nil){
+            FirebaseApp.configure()
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -81,10 +80,6 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         } else if textField == self.passwordTextField {
             if textField.text != nil {
                 self.userPassword = textField.text!
-            }
-        } else if textField == self.nameTextField {
-            if textField.text != nil {
-                self.userName = textField.text!
             }
         } else if textField == self.passwordVerificationTextField {
             if textField.text != nil {
