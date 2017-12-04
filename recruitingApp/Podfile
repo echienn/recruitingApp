@@ -6,6 +6,7 @@ target 'recruitingApp' do
   use_frameworks!
 
   # Pods for recruitingApp
+pod 'Firebase'
 pod 'FirebaseAuth'
 pod 'FirebaseStorage'
 pod 'SDWebImage'
