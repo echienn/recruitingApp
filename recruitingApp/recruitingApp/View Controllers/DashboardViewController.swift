@@ -26,9 +26,39 @@ class DashboardViewController: UIViewController, MFMailComposeViewControllerDele
 
         // Do any additional setup after loading the view.
     }
+    let currentUser = CurrentUser()
     
+    /*
+     This function uses the 'getPosts' function to retrieve all of the posts in the database. We pass in the currentUser property declared above so that we know if the posts have been read or not.
+     Using the posts variable that is returned, we are doing the following:
+     - First clearing the current dictionary of posts (in case we're reloading this feed again). We are doing this by calling the 'clearThreads' function.
+     - For each post in the array:
+     - We are adding the post to the thread using the 'addPostToThread' function
+     - Using the postImagePath property of the post, we are retrieving the image data from the storage module (there is a function in ImageFeed.swift that does this for us already, implemented by you. *Thanks!*).
+     - We are creating a UIImage from the data and adding a new element to the 'loadedImagesById' variable using the image and post ID.
+     - After iterating through all the posts, we are reloading the tableview.
+     
+     */
+    func updateData() {
+        getContacts(user: currentUser) { (conts) in
+            if let conts = conts {
+                clearContacts()
+                for contact in conts {
+                    addContactToContacts(contact: contact)
+                }
+                companyList = contactCompanies
+                contactBook = contacts
+                self.contactsTableView.reloadData()
+            }
+        }
+ 
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        updateData()
+        print("GOT TO THIS STEP")
+        print(currentUser.id)
         self.contactsTableView.reloadData();
     }
     

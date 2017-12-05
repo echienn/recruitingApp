@@ -58,15 +58,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        
         if(FirebaseApp.app() == nil){
             FirebaseApp.configure()
         }
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         //if Auth.auth().currentUser != nil {
-          //  self.performSegue(withIdentifier: "segueSignInToMainPage", sender: self)
+        //    self.performSegue(withIdentifier: "segueSignInToMainPage", sender: self)
         //}
         
     }

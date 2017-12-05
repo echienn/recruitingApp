@@ -69,7 +69,7 @@ class ContactInformationViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: { (action) in
                 self.performSegue(withIdentifier: "unwindToDashboard", sender: self)
             }))
-        
+            recruitingApp.addContact(recruiter_name: nameField, recruiter_company: companyField, recruiter_email: emailField, recruiter_phonenumber: phoneNumberField, current_status: "Haven't Applied")
             self.present(alert, animated: true, completion: nil)
 
             print("AFTER ADDING CONTACT")
