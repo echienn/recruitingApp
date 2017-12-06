@@ -52,7 +52,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier:"segueLogInToCreateAccount", sender: self)
     }
     
-    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +64,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         if(FirebaseApp.app() == nil){
             FirebaseApp.configure()
         }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ContactInformationViewController.dismissKeyboard))
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
     
     
