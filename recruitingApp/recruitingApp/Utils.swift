@@ -29,6 +29,7 @@ func getPostFromIndexPath(indexPath: IndexPath) -> Contact? {
 
 func clearContacts() {
     contacts = [:]
+    contactCompanies = []
 }
 
 
