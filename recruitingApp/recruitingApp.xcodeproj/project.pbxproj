@@ -20,6 +20,7 @@
 		733639541FD5ECE00022E2EB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733639531FD5ECE00022E2EB /* Utils.swift */; };
 		733D8DBF1FD550930021F7EC /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D8DBE1FD550930021F7EC /* CreateAccountController.swift */; };
 		733D8DC11FD552660021F7EC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D8DC01FD552660021F7EC /* SignInViewController.swift */; };
+		BD4A4E4F1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A4E4E1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift */; };
 		BDAE5DE01FCE45E8006859DE /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAE5DDF1FCE45E8006859DE /* ContactDetailsViewController.swift */; };
 		E5AE705FD579D83859AA97C2 /* Pods_recruitingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDECE4706712BBDEDB092C18 /* Pods_recruitingApp.framework */; };
 		EF1947621FC2037900B81E84 /* ContactInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1947611FC2037900B81E84 /* ContactInformationViewController.swift */; };
@@ -44,6 +45,7 @@
 		733639531FD5ECE00022E2EB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		733D8DBE1FD550930021F7EC /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		733D8DC01FD552660021F7EC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BD4A4E4E1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeBusinessCardViewController.swift; sourceTree = "<group>"; };
 		BDAE5DDF1FCE45E8006859DE /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		EF1947611FC2037900B81E84 /* ContactInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformationViewController.swift; sourceTree = "<group>"; };
 		EF1947641FC2061500B81E84 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				EF1947631FC2039600B81E84 /* View Controllers */,
 				51C0B23A1FBD3CFD008B806B /* AppDelegate.swift */,
 				51C0B23E1FBD3CFD008B806B /* Main.storyboard */,
+				BD4A4E4E1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift */,
 				51C0B2411FBD3CFD008B806B /* Assets.xcassets */,
 				51C0B2431FBD3CFD008B806B /* LaunchScreen.storyboard */,
 				51C0B2461FBD3CFD008B806B /* Info.plist */,
@@ -277,6 +280,7 @@
 				51591E6B1FC2220F00A23557 /* ContactsTableViewCell.swift in Sources */,
 				51C0B23B1FBD3CFD008B806B /* AppDelegate.swift in Sources */,
 				EF1947651FC2061500B81E84 /* DashboardViewController.swift in Sources */,
+				BD4A4E4F1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift in Sources */,
 				BDAE5DE01FCE45E8006859DE /* ContactDetailsViewController.swift in Sources */,
 				733D8DC11FD552660021F7EC /* SignInViewController.swift in Sources */,
 				51591E6F1FC244F600A23557 /* ContactBook.swift in Sources */,
@@ -419,10 +423,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8J55MU249;
+				DEVELOPMENT_TEAM = 8QQJPU78HS;
 				INFOPLIST_FILE = recruitingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = recruitingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Elaine.recruitingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -435,10 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U8J55MU249;
+				DEVELOPMENT_TEAM = 8QQJPU78HS;
 				INFOPLIST_FILE = recruitingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = recruitingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Elaine.recruitingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

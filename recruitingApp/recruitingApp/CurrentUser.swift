@@ -19,7 +19,7 @@ class CurrentUser {
     init() {
         let currentUser = Auth.auth().currentUser
         print("LOOK FOR ")
-        print(currentUser)
+        //print(currentUser)
         id = currentUser?.uid
     }
     

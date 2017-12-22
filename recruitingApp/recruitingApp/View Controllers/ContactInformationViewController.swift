@@ -23,6 +23,9 @@ class ContactInformationViewController: UIViewController {
     var phoneNumberField: String = ""
     var notesField: String = ""
     
+    @IBAction func takeBusinessCardPic(_ sender: Any) {
+
+    }
     
     @IBAction func addContact(_ sender: Any) {
         if let name = contactName {
@@ -101,6 +104,10 @@ class ContactInformationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
+    
     
 
     /*
