@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class TakeBusinessCardViewController: UIViewController {
+class TakeBusinessCardViewController: UIViewController, AVCapturePhotoCaptureDelegate{
 
     //middleman between AVCaptureInput and AVCaptureOutputs
     var captureSession: AVCaptureSession?
@@ -18,14 +18,16 @@ class TakeBusinessCardViewController: UIViewController {
   
     var previewLayer: AVCaptureVideoPreviewLayer?
     var photoOutput: AVCapturePhotoOutput? = nil
+    var captureDevice: AVCaptureDeviceInput?
+    var selectedImage = UIImage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         captureSession = AVCaptureSession()
         createAndLayoutPreviewLayer(fromSession: captureSession)
         configureCaptureSession(forDevicePosition: .unspecified)
-        imageViewOverlay.image = nil
-
-        // Do any additional setup after loading the view.
+        captureSession?.startRunning()
+        toggleUI(isInPreviewMode: false)
     }
     
     func configureCaptureSession(forDevicePosition devicePostion: AVCaptureDevice.Position) {
@@ -36,22 +38,21 @@ class TakeBusinessCardViewController: UIViewController {
         
         // specifies that we want high quality video captured from the device
         captureSession.sessionPreset = AVCaptureSession.Preset.high
-        
-        // This line will need to be edited for part 5.
-        // It has a bad name (and is poorly written syntactically) because we want
-        // you to think about what it's type should be.
         let camera = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: devicePostion).devices[1]
         
         do {
             // TODO: add an input and output to our AVCaptureSession
             let input = try AVCaptureDeviceInput(device: camera)
             captureSession.addInput(input)
-            self.photoOutput = AVCapturePhotoOutput()
-            self.photoOutput!.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])], completionHandler: nil)
-            
-            if captureSession.canAddOutput(self.photoOutput!) { captureSession.addOutput(self.photoOutput!) }
-            
+            //photoOutput = AVCapturePhotoOutput()
+            //captureSession.addOutput(photoOutput!)
+           /* photoOutput.setPreparedPhotoSettingsArray([AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])], completionHandler: nil)
+ 
+            if captureSession.canAddOutput(photoOutput) { captureSession.addOutput(photoOutput) }
+ 
             captureSession.startRunning()
+ */
+            
         }
         catch {
             print(error.localizedDescription)
@@ -60,7 +61,7 @@ class TakeBusinessCardViewController: UIViewController {
     
     func createAndLayoutPreviewLayer(fromSession session: AVCaptureSession?) {
         // TODO: initialize previewLayer
-        previewLayer = AVCaptureVideoPreviewLayer()
+         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         guard let previewLayer = previewLayer else {
             print("previewLayer hasn't been initialized yet!")
             return
@@ -77,7 +78,34 @@ class TakeBusinessCardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photo: AVCapturePhoto,
+                     error: Error?) {
+        
+        let pic: UIImage = UIImage(data: photo.fileDataRepresentation()!)!
+        selectedImage = pic
+        toggleUI(isInPreviewMode: true)
+    }
+    
+    func toggleUI(isInPreviewMode: Bool) {
+        if isInPreviewMode {
+            imageViewOverlay.image = selectedImage
+            //takePhotoButton.isHidden = true
+            //sendButton.isHidden = false
+            //cancelButton.isHidden = false
+            //flipCameraButton.isHidden = true
+            
+        }
+        else {
+            //takePhotoButton.isHidden = false
+            //sendButton.isHidden = true
+            //cancelButton.isHidden = true
+            imageViewOverlay.image = nil
+            //flipCameraButton.isHidden = false
+        }
+    }
+    
+   
 
     /*
     // MARK: - Navigation
@@ -90,3 +118,4 @@ class TakeBusinessCardViewController: UIViewController {
     */
 
 }
+
