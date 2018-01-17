@@ -89,7 +89,6 @@
 				EF1947631FC2039600B81E84 /* View Controllers */,
 				51C0B23A1FBD3CFD008B806B /* AppDelegate.swift */,
 				51C0B23E1FBD3CFD008B806B /* Main.storyboard */,
-				BD4A4E4E1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift */,
 				51C0B2411FBD3CFD008B806B /* Assets.xcassets */,
 				51C0B2431FBD3CFD008B806B /* LaunchScreen.storyboard */,
 				51C0B2461FBD3CFD008B806B /* Info.plist */,
@@ -128,6 +127,7 @@
 				51591E6A1FC2220F00A23557 /* ContactsTableViewCell.swift */,
 				733D8DBE1FD550930021F7EC /* CreateAccountController.swift */,
 				733D8DC01FD552660021F7EC /* SignInViewController.swift */,
+				BD4A4E4E1FEC7E2D00C0C697 /* TakeBusinessCardViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

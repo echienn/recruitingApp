@@ -4,6 +4,8 @@
 //
 //  Created by Elaine Chien on 12/21/17.
 //  Copyright © 2017 Shubham Gupta. All rights reserved.
+
+//sources: https://stackoverflow.com/questions/39894630/how-to-get-front-camera-back-camera-and-audio-with-avcapturedevicediscoverysess
 //
 
 import UIKit
@@ -29,7 +31,7 @@ class TakeBusinessCardViewController: UIViewController, AVCapturePhotoCaptureDel
         captureSession?.startRunning()
         toggleUI(isInPreviewMode: false)
     }
-    
+   
     func configureCaptureSession(forDevicePosition devicePostion: AVCaptureDevice.Position) {
         guard let captureSession = captureSession else {
             print("captureSession has not been initialized")
@@ -38,7 +40,15 @@ class TakeBusinessCardViewController: UIViewController, AVCapturePhotoCaptureDel
         
         // specifies that we want high quality video captured from the device
         captureSession.sessionPreset = AVCaptureSession.Preset.high
-        let camera = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: devicePostion).devices[1]
+        let all_devices = AVCaptureDevice.DiscoverySession.init(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],mediaType: AVMediaType.video,position: AVCaptureDevice.Position.unspecified)
+        
+        var camera = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: devicePostion).devices[1]
+        for device in all_devices.devices{
+            if device.position == AVCaptureDevice.Position.back {
+                camera = device
+            }
+        }
+        
         
         do {
             // TODO: add an input and output to our AVCaptureSession
