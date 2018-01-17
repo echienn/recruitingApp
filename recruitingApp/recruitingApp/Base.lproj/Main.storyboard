@@ -198,31 +198,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-fM-zPq">
-                                <rect key="frame" x="20" y="95" width="280" height="398"/>
+                                <rect key="frame" x="20" y="95" width="1744" height="398"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landingIcon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQs-Q9-O3k">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="142.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1744" height="142.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOf-Av-nx2">
-                                        <rect key="frame" x="0.0" y="162.5" width="280" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="162.5" width="1744" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxW-Oz-c4C">
-                                        <rect key="frame" x="0.0" y="203" width="280" height="35.5"/>
+                                        <rect key="frame" x="0.0" y="203" width="1744" height="35.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhx-eP-13b">
-                                        <rect key="frame" x="0.0" y="258.5" width="280" height="35"/>
+                                        <rect key="frame" x="0.0" y="258.5" width="1744" height="35"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUH-j2-nrA">
-                                        <rect key="frame" x="0.0" y="313.5" width="280" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="313.5" width="1744" height="34.5"/>
                                         <color key="backgroundColor" red="0.4823529411764706" green="0.60784313725490191" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,7 +232,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkS-TQ-DUi">
-                                        <rect key="frame" x="0.0" y="368" width="280" height="30"/>
+                                        <rect key="frame" x="0.0" y="368" width="1744" height="30"/>
                                         <color key="tintColor" red="0.4823529412" green="0.60784313729999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Don't have an account yet?"/>
                                         <connections>
@@ -503,17 +503,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="29"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-3S-9Iy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zor-hb-toI">
-                                                        <rect key="frame" x="135" y="0.0" width="135" height="29"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="sfP-3H-kpV">
+                                                        <rect key="frame" x="109.5" y="0.0" width="80.5" height="29"/>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zor-hb-toI">
+                                                        <rect key="frame" x="190" y="0.0" width="80" height="29"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                                                         </accessibility>
-                                                        <state key="normal" title="Button" image="camera_icon"/>
+                                                        <state key="normal" title="Button" image="camera-icon-34"/>
                                                         <connections>
                                                             <action selector="takeBusinessCardPic:" destination="h4X-bj-g3J" eventType="touchUpInside" id="Zor-jw-bmv"/>
                                                             <segue destination="ntf-RQ-Wjn" kind="show" identifier="toBusinessPic" id="apd-ko-CVN"/>
@@ -521,7 +524,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="zor-hb-toI" firstAttribute="width" secondItem="x1c-3S-9Iy" secondAttribute="width" id="j0J-TX-94G"/>
+                                                    <constraint firstItem="sfP-3H-kpV" firstAttribute="width" secondItem="zor-hb-toI" secondAttribute="width" id="nN4-R3-Aha"/>
                                                 </constraints>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-CY-gHH">
@@ -607,7 +610,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioq-Vv-zk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eil-wt-xBl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="-54"/>
+            <point key="canvasLocation" x="1190.625" y="-54.929577464788736"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="Kq6-BE-Fhy">
@@ -715,7 +718,7 @@
     <resources>
         <image name="accepted" width="2626" height="2626"/>
         <image name="blankUser" width="462" height="462"/>
-        <image name="camera_icon" width="150" height="150"/>
+        <image name="camera-icon-34" width="512" height="512"/>
         <image name="emailPic" width="258" height="198"/>
         <image name="landingIcon" width="1744" height="1831"/>
         <image name="profile-background" width="5262" height="2333"/>
